@@ -1,0 +1,23 @@
+language: go
+
+services: 
+  - docker
+
+go:
+  - 1.7.x
+
+
+script:
+  - go get github.com/gorilla/mux
+  - go test
+  - go build
+  - make default
+
+  #- go get github.com/gorilla/mux
+  # Add Godeps dependencies to GOPATH and PATH
+  #- export GOPATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace:$GOPATH"
+  #- export PATH="${TRAVIS_BUILD_DIR}/Godeps/_workspace/bin:$PATH"
+  #- go build 
+  #- docker build -t chricardo/pe-go-demo .
+  #- docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  #- docker push chricardo/pe-go-demo;
